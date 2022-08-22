@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter:wght@400;700&family=Lexend+Deca:wght@400;700&display=swap"
+    rel="stylesheet">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 13px; text-align: center; }
+    .attribution a { color: rgb(0, 0, 0); }
+    
+  </style> 
+</head>
+<style>
+  .mobileHomeNav {
+    display: none;
+  }
+
+  @media only screen and (max-width :1020px) {
+    .mobileHomeNav {
+      display: flex;
+      visibility: visible;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 15px;
+      position: normal;
+    }
+  }
+</style>
+
+<body>
+  <div id="overlay" onclick="hideSideNav();"></div>
+  <div class="container">
+    <div class="mobileHomeNav" onclick="showNav();">
+      <img src="images/logo.svg" alt="logo" class="logoMobile">
+      <img src="images/icon-menu.svg" alt="logo" class="menu">
+    </div>
+    <nav class="nav">
+      <div class="btnClose" onclick="closeSideNav();"><img src="images/icon-close-menu.svg" alt="closeIcon"></div>
+      <div class="navLeft">
+        <img src="images/logo.svg" alt="logo" class="logo">
+
+        <ul>
+          <li class="listLevel1" id="dropFeatures" >Features<img class="navArrow" src="images/icon-arrow-down.svg" alt="icon">
+            <ul class="dropdown drop1">
+              <div class="dropLinks">
+                <li class="listLevel2"><a href="#" class="dropItems"><img src="images/icon-todo.svg" alt="icon">Todo
+                    List</a></li>
+                <li class="listLevel2"><a href="#" class="dropItems"><img src="images/icon-calendar.svg"
+                      alt="icon">Calenders</a></li>
+                <li class="listLevel2"><a href="#" class="dropItems"><img src="images/icon-reminders.svg"
+                      alt="icon">Reminders</a></li>
+                <li class="listLevel2"><a href="#" class="dropItems"><img src="images/icon-planning.svg"
+                      alt="icon">Planning</a></li>
+              </div>
+            </ul>
+          </li>
+          <li class="listLevel1" id="dropCompany" >Company<img class="navArrow" src="images/icon-arrow-down.svg" alt="icon">
+            <ul class="dropdown drop2">
+              <div class="dropLinks">
+                <li class="listLevel2"><a href="#" class="dropItems">History</a></li>
+                <li class="listLevel2"><a href="#" class="dropItems">Our Team</a></li>
+                <li class="listLevel2"><a href="#" class="dropItems">Blog</a></li>
+
+              </div>
+            </ul>
+          </li>
+          <li class="listLevel1"><a href="#">Careers</a></li>
+          <li class="listLevel1"><a href="#">About</a></li>
+        </ul>
+      </div>
+
+      <div class="authentication">
+        <button class="btnLogin">Login</button>
+        <button class="btnRegister">Register</button>
+      </div>
+
+    </nav>
+    <div class="showcase">
+      <div class="mainContent">
+        <div class="mainTitle">
+          <div class="title">
+            <h1>Make <span>remote work</span></h1>
+          </div>
+         
+          <p>
+            Get your team in sync, no matter your location. Streamline processes,
+            create team rituals, and watch productivity soar.
+          </p>
+          <button id="learnMore">Learn More</button>
+          <div class="clientBox">
+            <img src="images/client-databiz.svg" alt="icon">
+            <img src="images/client-audiophile.svg" alt="icon">
+            <img src="images/client-meet.svg" alt="icon">
+            <img src="images/client-maker.svg" alt="icon">
+          </div>
+        </div>
+
+      </div>
+      <div class="mainImage">
+        <img class = "heroImage" src="images/image-hero-desktop.png" alt="main-icon">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/sandeshad100">Sandesh Adhikari</a>.
+  </div>
+</body>
+<script>
+  const sidebar = document.querySelector('.nav');
+  const overlay = document.getElementById('overlay');
+  const closeSide = document.querySelector('.btnClose');
+
+
+  function showNav() {
+    sidebar.style.display = "block";
+    overlay.style.display = "block";
+
+  }
+
+  function closeSideNav() {
+    sidebar.style.display = "";
+    overlay.style.display = "";
+  }
+
+  function hideSideNav() {
+    sidebar.style.display = "";
+    overlay.style.display = "";
+  }
+
+  
+  
+ 
+</script>
+
+</html>
